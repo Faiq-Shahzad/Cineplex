@@ -1,52 +1,34 @@
 @extends('layouts.layout')
 
+<head>
+    <title>Cineplex - Home</title>
+</head>
+
 <style>
-    .jumbotron{
+    .alert{
         width: 25%;
         margin-left: auto;
         margin-right: auto;
         margin-top: 2%;
+        text-align: center;
+        border: 2px solid green !important;
     }
 </style>
 
 
 @section('content')
 
-    <div class="jumbotron text-center">
-        @if (session('status'))
-            <div class="alert alert-success" role="alert">
-                {{ session('status') }}
-            </div>
-        @endif
-
-        {{ __('You are logged in!') }}
+    @if (session('status'))
+    <div class="alert alert-success" role="alert">
+        {{ session('status') }}
     </div>
+    @endif
 
-
-{{-- <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
-        </div>
-    </div>
-</div> --}}
 @endsection 
 
 <script>
     setTimeout(function(){
-        $('.jumbotron').slideUp(1500);
+        $('.alert').slideUp(1500);
     }, 2000);
 </script>
 
