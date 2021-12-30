@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\MovieController;
+use App\Models\Movies;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,9 +24,16 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::middleware(['auth', 'chkAdmin'])-> group(function(){
-    Route::get('/admin', function(){
-        return view('admin/home');
+    Route::get('/admin/home', function(){
+        return view('admin.home');
     });
+
+    Route::get('/viewMovies', 'App\Http\Controllers\MovieController@show');
+    Route::post('/addMovies', 'App\Http\Controllers\MovieController@addMovie');
+    Route::get('/addMovies', function(){
+        return view('admin.addMovies');
+    });
+
 });
 
 Route::get('/aboutUs', function(){
