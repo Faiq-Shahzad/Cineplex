@@ -57,11 +57,6 @@
                 font-family: 'Shizuru', cursive;      
             }
 
-            /* ul {
-                opacity: 1 !important;
-                font-size: 16px;
-            } */
-
             .nav-link{
                 color: white !important;
             }
@@ -76,9 +71,8 @@
                 margin-bottom: 0;
             }
 
-            div .dropdown-menu{
+            .navbar div .dropdown-menu{
                 background-color: rgb(233, 20, 20);
-                opacity: 0.75;
             }
 
             footer a:hover{
@@ -132,7 +126,18 @@
                 <ul class="navbar-nav ms-auto">
 
                     <li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/allMovies">Movies</a></li>
+
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            Movies
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/admin/viewMovies">View Movies</a>
+                            <a class="dropdown-item" href="/admin/addMovies">Add Movies</a>
+                        </div>
+                    </li>
+
                     <li class="nav-item"><a class="nav-link" href="/aboutUs">About Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="/contactUs">Contact Us</a></li>
 

@@ -28,10 +28,16 @@ Route::middleware(['auth', 'chkAdmin'])-> group(function(){
         return view('admin.home');
     });
 
-    Route::get('/viewMovies', 'App\Http\Controllers\MovieController@show');
-    Route::post('/addMovies', 'App\Http\Controllers\MovieController@addMovie');
-    Route::get('/addMovies', function(){
+    Route::get('/admin/viewMovies', 'App\Http\Controllers\MovieController@show');
+    
+    Route::post('/admin/addMovies', 'App\Http\Controllers\MovieController@addMovie');
+    
+    Route::get('/admin/addMovies', function(){
         return view('admin.addMovies');
+    });
+
+    Route::get('/admin/editMovies', function(){
+        return view('admin.editMovies');
     });
 
 });

@@ -1,5 +1,16 @@
 @extends('layouts.layout')
 
+<style>
+    .alert{
+        width: 25%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 2%;
+        text-align: center;
+        border: 2px solid green !important;
+    }
+</style>
+
 @section('content')
 
     <div class="jumbotron text-center">
@@ -10,33 +21,10 @@
         @endif
     </div>
 
-    {{-- <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">{{ __('Dashboard') }}</div>
-
-                    <div class="card-body">
-                        @if (session('status'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('status') }}
-                            </div>
-                        @endif
-
-                        {{ __('You are logged in!') }}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-     --}}
 @endsection
 
 <script>
-    $(document).ready(function(){
-
-        setTimeout(function(){
-            $('.alert alert-success').fadeOut(1000);
-        }, 2000);
-    });
+    setTimeout(function(){
+        $('.alert').slideUp(1500);
+    }, 2000);
 </script>

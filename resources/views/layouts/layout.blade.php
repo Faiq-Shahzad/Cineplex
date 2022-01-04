@@ -78,7 +78,6 @@
 
             div .dropdown-menu{
                 background-color: rgb(233, 20, 20);
-                opacity: 0.75;
             }
 
             footer a:hover{
