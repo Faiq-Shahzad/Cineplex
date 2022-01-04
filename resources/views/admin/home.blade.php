@@ -1,5 +1,9 @@
 @extends('layouts.layout')
 
+<head>
+    <title>Cineplex - Home</title>
+</head>
+
 <style>
     .alert{
         width: 25%;
@@ -13,18 +17,16 @@
 
 @section('content')
 
-    <div class="jumbotron text-center">
-        @if (session('status'))
-            <div class="alert alert-success" role="alert">
-                {{ session('status') }}
-            </div>
-        @endif
+    @if (session('status'))
+    <div class="alert alert-success" role="alert">
+        {{ session('status') }}
     </div>
+    @endif
 
 @endsection
 
-<script>
-    setTimeout(function(){
-        $('.alert').slideUp(1500);
-    }, 2000);
-</script>
+    <script>
+        setTimeout(function(){
+            $('.alert').slideUp(1500);
+        }, 2000);
+    </script>
