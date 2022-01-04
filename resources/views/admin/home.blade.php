@@ -1,6 +1,5 @@
 @extends('layouts.layout')
 
-
 <head>
     <title>Cineplex - Home</title>
 </head>
